@@ -1,0 +1,36 @@
+<div class="form-group">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <% if user_signed_in? %>
+      <div class="text-info">
+        <%= link_to "Log Out", destroy_user_session_path, class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %>
+      </div>
+    <% else %>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control form-control-lg", placeholder: "Enter email"%>
+      </div>
+
+      <div>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control  form-control-lg", placeholder: "Password"%>
+      </div>
+      <div class="form-group checkbox small">
+        <label>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+        </label>
+      </div>
+      <%= button_tag(type: 'submit', class: "text-center btn btn-slide-panel btn-lg btn-block") do %>
+        <i class="ti ti-lock"></i> Log In
+      <% end %>
+      <%= render "devise/shared/links" %>
+    <% end -%>
+  <% end %>
+</div> 
+
+
+

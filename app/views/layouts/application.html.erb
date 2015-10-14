@@ -1,0 +1,100 @@
+<!doctype html>
+<!--[if lte IE 8 ]> <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<!-- <html class="no-js" lang="en"> -->
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>miPLE - mi Personal Learning Environment Project</title>
+    <meta name="description" content="Home : Be Different Bootstrap Theme - a different, unique theme with 10 different color combos. Built with Bootstrap, custom css3, html5, and plenty of excellent components, sliders, and other useful elements">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <!-- BASE CSS ============================================== -->
+    <!-- custom build of latest bootstrap see json or follow the link in the file ============================================== -->
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+    
+    <!-- ASSET CSS (if you are on a secure server remove the http: but not the // it won't work local but will work for both http and httpS ============================================== -->
+    <!-- <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/theme-assets.min.css" rel="stylesheet" type="text/css">
+     -->
+    <!-- LOGO FONT, replace with your own ============================================== -->
+    <!-- <link href="assets/css/logo-font.css" rel="stylesheet" type="text/css"> -->
+    
+    <!-- THEME CSS (unminified TOC version w/purchase) ============================================== -->
+    <!-- <link href="assets/less/b-different-retro.min.less" rel="stylesheet/less" type="text/css"> -->
+    
+    <!-- SCRIPTS IN HEAD ============================================== -->
+    <!-- // <script src="assets/js/modernizr.2.8.3.js"></script> -->
+    
+    <!--[if lt IE 9]>
+   <script src="assets/js/respond.min.js"></script>
+   <![endif]-->
+    
+    <!-- +++++++ jQuery library ============================================== -->
+    <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- // <script> -->
+   <!-- if (!window.jQuery) { -->
+       <!-- document.write('<script src="assets/js/jquery-1.11.1.min.js"><\/script>'); -->
+   <!-- } -->
+   <!-- </script> -->
+    
+    <!-- WINDOWS 8 Phones BUG FIX -->
+    <!-- // <script src="assets/js/windows-fix.js"></script> -->
+</head>
+<body>
+
+<!-- +++++ No Script Fallback notice +++++ -->
+<noscript>
+<div>Turn on your JavaScript!</div>
+</noscript>
+<!-- accessibility skip to nav skip content -->
+<!-- <ul class="sr-only" id="top">
+    <li><a href="#nav" title="Skip to navigation" accesskey="n">Skip to Navigation</a></li>
+    <li><a href="#page" title="Skip to content" accesskey="c">Skip to Content</a></li>
+</ul> -->
+<!--  /.sr-only accessibility--> 
+<%= render 'layouts/header' %>
+<%= render 'layouts/slideoutpanels' %>
+
+<!-- =============== BEGIN #page ==============================-->
+<div id="page"> 
+    <!-- =========== BEGIN CONTENT FOR THE PAGE =========================================================================== -->
+    <!-- <div class="page-content" role="main"> -->
+        <!-- <div class="container">  -->
+            <!-- .container for entire page --> 
+            
+            <% if notice %>
+                <br>
+                <div class = "container text-center panel panel-info text-info bg-info">
+                    <p class="notice"><%= notice %></p>
+                </div>
+                <% elsif alert %>
+                <br>
+                <div class = "container text-center panel panel-warning text-warning bg-warning">
+                    <p class="alert"><%= alert %></p>
+                </div>
+            <% end %>
+            <%= yield %>
+
+
+
+
+        <!-- </div> -->
+        <!-- / .container --> 
+        <!-- </div> -->
+    <!-- /.page-content role=main --> 
+    <!--=========== END CONTENT FOR THE PAGE ============================================================ --> 
+</div>
+<!-- ================== END #page ================= --> 
+
+<%= render 'layouts/footer' %>
+</body>
+</html>
+
+<!-- FOOTER SCRIPTS -->
+    <!-- not required handled by rails -->
+
