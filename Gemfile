@@ -28,6 +28,7 @@ gem 'font-awesome-sass', '~> 4.4.0'
 gem 'themify-icons-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'friendly_id', '~> 5.1.0'
+gem "paperclip", "~> 4.3"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
