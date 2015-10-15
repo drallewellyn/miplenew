@@ -30,6 +30,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'friendly_id', '~> 5.1.0'
 gem "paperclip", "~> 4.3"
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
