@@ -15,6 +15,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
+//= require jquery.magnific-popup
+//= require jquery-1.11.1
+//= require bootstrapoverrides
 //= require jquery.bootstrap.addon
 //this needs to go at end
 //= require turbolinks 
