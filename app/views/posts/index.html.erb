@@ -1,0 +1,115 @@
+<!-- =============== BEGIN #page ==============================-->
+<!-- <div id="page">  -->
+    <!-- =========== PAGE HEADER ON ALL BUT INDEX PAGES =========================================================================== --> 
+    <!-- _________ Page Header ___________ -->
+    <div class="page-header-primary">
+        <div class="container">
+            <h2>Blog Summary</h2>
+            <ol class="breadcrumb page-header-breadcrumb hidden-xs">
+                <li><a href="index.html" class="link-underline">Home</a></li>
+                <li class="active">Blog Summary</li>
+            </ol>
+        </div>
+        <!-- /.container (for page-header-primary) --> 
+    </div>
+    <!-- /.page-header-primary --> 
+    <!-- =========== BEGIN CONTENT FOR THE PAGE =========================================================================== -->
+    <div class="page-content" role="main">
+
+        <div class="container">
+            <div class="filter">
+                <span class="filter-title">
+                    Choose Filter
+                </span>
+                <ul class="sort jsbutton">
+                    
+                    <%= link_to 'Latest', posts_path, :class => 'jslink', :style => "display: inline-block" %>
+                    <br>
+                   
+                    <span class = "jsbutton">
+                        <% tag_cloud(@tags, %w(tagsort tagsort tagsort)) do |tag, css_class| %>
+                    </span>
+                        <li class = "jslink">
+                            <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="filter-clone"><!-- this is where the clone of the filter goes--></div>
+            
+            <!-- _________ MASONRY WITH ISOTOPE ___________ -->
+            
+            <ul class="row row-masonry filter-masonry">
+                <li class="grid-sizer"></li>
+                <!-- required for fluid masonry layout -->
+                <li class="gutter-sizer"></li>
+                <!-- required for fluid masonry layout --> 
+                
+                <!-- NEW STUFF -->
+                <% @posts.each do |post| %>
+                    <li class="post msnry-blog-entry #">
+                        <% if post.image.exists? %>
+                            <div class="click-slide click-top"> 
+                                <%= link_to image_tag post.image.url(:medium) %>
+                                <div class = "text-center">
+                                    <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
+                                </div>
+                            </div>
+                        <% end %>
+                        <div class="msnry-blog-entry-text">
+                            <h4 class"h5"><a href="#"><%= link_to post.title, post %></a></h4>
+                            <p><%= truncate(post.body, :length => 150) %></p>
+                            <ul class="msnry-blog-entry-meta list-inline">
+                                <li>
+                                    <span class="ti ti-pencil-alt">
+                                    </span>
+                                    by Anthony Llewellyn
+                                </li>
+                                    <li>
+                                    <span class="ti ti-calendar">
+                                    </span>
+                                    <%= post.created_at.strftime('%A, %B %d') %>
+                                </li>
+                                 <li class="entry-tags hidden-xs">
+                                    <% post.tags.any? %>
+                                        <% post.tags.each do |tag| %>
+                                            <li><a href="#"> 
+                                                <%= link_to tag.name, tag_path(tag.name) %>
+                                            </a></li>  
+                                    <% end %>
+                                </li>
+                            </ul>
+                        </div>        
+                    </li>
+                <% end %>
+                
+                </li>
+
+            </ul>
+            <!--/ .row-masonry -->
+            
+            <div class="text-center">
+                <span class="new-pagination-toggle">
+                    Pagination
+                </span>
+                <!-- <ul class="new-pagination pagination pagination-lg clearfix"> -->
+                    <%= page_entries_info @posts %>
+                    <br>
+                    <%= will_paginate @posts, renderer: BootstrapPagination::Rails, :class => 'new-pagination pagination pagination-lg clearfix' %>
+                    
+                <!-- </ul> -->
+            </div>
+            <!-- /.text-center holding .pagination which shows at 992px and higher and is toggled otherwise --> 
+            <% if user_signed_in? %>
+                <%= link_to "New Article", new_post_path(@post), class: "btn btn-primary" %>
+            <% end %>
+        </div>
+
+        <!--/ .container--> 
+    </div>
+    <!-- /.page-content role=main --> 
+    <!--=========== END CONTENT FOR THE PAGE ============================================================ --> 
+<!-- </div> -->
+<!-- ================== END #page ================= --> 
+
+

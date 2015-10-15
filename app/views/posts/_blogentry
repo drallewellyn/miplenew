@@ -1,0 +1,59 @@
+<!-- _____________ BEGIN 'entry-post' _________ -->
+    <header class="entry-header">
+        <div class "entry-title">
+            <%= @post.title %>
+        </div>    
+            <br>
+        <ul class="entry-meta list-inline">
+            <li>
+                <span class="ti ti-pencil-alt">
+                </span>
+                by Anthony Llewellyn</li>
+            <li><a href="blog-single.html#view-comments" class="has-anchor">
+                <span class="ti ti-comments">
+                </span>
+                6 Comments</a></li>
+            <li>
+                <span class="ti ti-calendar">
+                </span>
+                <%= time_ago_in_words(@post.created_at) %> ago</li>
+        </ul>
+        <ul class="entry-tags hidden-xs">
+            <% @post.tags.any? %>
+                <% @post.tags.each do |tag| %>
+                    <li><a href="#"> 
+                        <%= link_to tag.name, tag_path(tag.name) %>
+                    </a></li>  
+            <% end %>
+        </ul>
+        <div class="entry-fancy-date">
+            <div>
+                <span class="day">
+                    <%= @post.created_at.strftime('%e') %>
+                </span>
+                <span class="month">
+                    <%= @post.created_at.strftime('%b') %>
+                </span>
+                <span class="year">
+                    <%= @post.created_at.strftime('%Y') %>
+            </div>
+        </div>
+        <div class="addthis_toolbox">
+            <div class="addthis_inner"> 
+                <!-- for sticking --> 
+                <a class="addthis_button_facebook"> <i class="fa fa-fw fa-facebook"></i> </a> <a class="addthis_button_twitter"> <i class="fa fa-fw fa-twitter"></i> </a> <a class="addthis_button_email"> <i class="fa fa-fw fa-envelope"></i> </a> <a class="addthis_button_compact"> <i class="fa fa-fw fa-plus"></i> </a> </div>
+        </div>
+    </header>
+    <!--/ entry-header -->
+    <!--/ thumbnail if present -->
+    <% if @post.image.exists? %>    
+        <%= image_tag @post.image.url(:large), class: 'img-full-width-tight' %>
+    <% end %>
+    <!--/ end thumbnail if present -->
+    <!-- begin article content -->
+
+    <br>
+
+    <p>
+        <%= markdown @post.body %>
+    </p>

@@ -1,0 +1,55 @@
+<!-- =============== BEGIN #page ==============================-->
+<div id="page"> 
+    <!-- =========== PAGE HEADER ON ALL BUT INDEX PAGES =========================================================================== --> 
+    <!-- _________ Page Header ___________ -->
+    <div class="page-header-primary">
+        <div class="container">
+            <h2>PLE Tool</h2>
+            <ol class="breadcrumb page-header-breadcrumb hidden-xs">
+                <li><a href="index.html" class="link-underline">Home</a></li>
+                <li> <a class="link-underline" href="blog-summary-masonry-layout.html"> Blog</a> </li>
+                <li class="active">PLE Tool</li>
+            </ol>
+        </div>
+        <!-- /.container (for page-header-primary) --> 
+    </div>
+    <!-- /.page-header-primary --> 
+    <!-- =========== BEGIN CONTENT FOR THE PAGE =========================================================================== -->
+    <div class="page-content" role="main">     
+        <!--slide to sidebar toggle --> 
+        <a class="visible-xs slide-sidebar has-anchor" href="#sidebar"><i class="ti ti-menu"></i> <em>Sidebar</em></a>
+        <div class="container blog">
+            <div class="row"> 
+                <!-- ____ PRIMARY COLUMN GOES HERE ____ -->
+                <div class="col-sm-8 col-md-9 primary-column" role="main">
+                    <div class="entry-full-post"> 
+                        <!-- _____________ BEGIN 'entry-post' _________ -->
+                        <article class="entry-post clearfix">
+                            <%= render 'pletools/pletool' %>
+                            <!--/ CRUD options if admin -->
+                            <% if user_signed_in? %>
+                                <div class="text-info">
+                                    <%= link_to "Edit Article", edit_pletool_path(@pletool), class: "btn btn-primary" %>
+                                    <%= link_to "Delete Article", pletool_path(@pletool), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+                                </div>
+                            <% end %>
+                            <!--/ end CRUD options -->
+                        </article>
+                        <!-- _____________ END 'entry-post'_________ --> 
+                    </div>
+                    
+                        </div>
+                        <!-- End Comment Form --> 
+                    </section>
+                    <!--close comment section--> 
+                </div>
+           </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!-- /.page-content role=main --> 
+    <!--=========== END CONTENT FOR THE PAGE ============================================================ --> 
+</div>
+<!-- ================== END #page ================= -->  
+<!-- _________ FOOTER SCRIPTS  ________ --> 

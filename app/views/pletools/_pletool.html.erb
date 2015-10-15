@@ -1,0 +1,78 @@
+<header class="entry-header">
+    <div class "entry-title">
+        <%= @pletool.title %>
+        <br>
+        <%= Rinku.auto_link(@pletool.link).html_safe %>
+    </div>    
+        <br>
+    <ul class="entry-meta list-inline">
+        <li>
+            <span class="ti ti-pencil-alt">
+            </span>
+            by Anthony Llewellyn</li>
+        <li><a href="blog-single.html#view-comments" class="has-anchor">
+            <span class="ti ti-comments">
+            </span>
+            6 Comments</a></li>
+        <li>
+            <span class="ti ti-calendar">
+            </span>
+            <%= time_ago_in_words(@pletool.created_at) %> ago</li>
+    </ul>
+    <ul class="entry-tags hidden-xs">
+        <% @pletool.tags.any? %>
+            <% @pletool.tags.each do |tag| %>
+                <li><a href="#"> 
+                    <%= link_to tag.name, tag_path(tag.name) %>
+                </a></li>  
+        <% end %>
+    </ul>
+    <div class="entry-fancy-date">
+        <div>
+            <span class="day">
+                <%= @pletool.created_at.strftime('%e') %>
+            </span>
+            <span class="month">
+                <%= @pletool.created_at.strftime('%b') %>
+            </span>
+            <span class="year">
+                <%= @pletool.created_at.strftime('%Y') %>
+        </div>
+    </div>
+    <div class="addthis_toolbox">
+        <div class="addthis_inner"> 
+            <!-- for sticking --> 
+                <!-- Twitter -->
+                    <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @pletool.title %> by @HETIMedDir - &amp;url=<%= url_for([@pletool, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+                        <a class="addthis_button_twitter">
+                            <i class="fa fa-fw fa-twitter"></i>
+                        </a>
+                    </a>
+                <!-- Facebook -->
+                    <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@pletool, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+                         <a class="addthis_button_facebook">
+                            <i class="fa fa-fw fa-facebook"></i>
+                        </a>
+                    </a>
+                <!-- Google Plus -->
+                <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@pletool, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+                 <a class="addthis_button_gogle_plus">
+                            <i class="fa fa-fw fa-google_plus"></i>
+                        </a>
+                    </a>                    
+        </div>
+    </div>
+</header>
+<!--/ entry-header -->
+<!--/ thumbnail if present -->
+<% if @pletool.image.exists? %>    
+    <%= link_to image_tag @pletool.image.url(:medium), :class => 'img-full-width-tight' %>
+<% end %>
+<!--/ end thumbnail if present -->
+<!--/ begin article content -->
+
+<br>
+
+<p>
+    <%= markdown @pletool.description %>
+</p>

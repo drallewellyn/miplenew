@@ -1,0 +1,46 @@
+<!-- =============== BEGIN #page ==============================-->
+<!-- <div id="page">  -->
+    <!-- =========== PAGE HEADER ON ALL BUT INDEX PAGES =========================================================================== --> 
+    <!-- _________ Page Header ___________ -->
+    <div class="page-header-primary">
+        <div class="container">
+            <h2>New Blog Post</h2>
+            <ol class="breadcrumb page-header-breadcrumb hidden-xs">
+                <li><a href="index.html" class="link-underline">Home</a></li>
+                <li> <a class="link-underline" href="blog-summary-masonry-layout.html"> Blog</a> </li>
+                <li class="active">Single Blog</li>
+            </ol>
+        </div>
+        <!-- /.container (for page-header-primary) --> 
+    </div>
+    <!-- /.page-header-primary --> 
+    <!-- =========== BEGIN CONTENT FOR THE PAGE =========================================================================== -->
+    <div class="page-content" role="main"> 
+
+        <!--slide to sidebar toggle --> 
+        <a class="visible-xs slide-sidebar has-anchor" href="#sidebar"><i class="ti ti-menu"></i> <em>Sidebar</em></a>
+        <div class="container blog">
+            <div class="row"> 
+                <!-- ____ PRIMARY COLUMN GOES HERE ____ -->
+                <div class="col-sm-8 col-md-9 primary-column" role="main">
+                    <div class="entry-full-post"> 
+                        <!-- _____________ BEGIN 'entry-post' _________ -->
+                        <article>
+
+                           <h1>New Post</h1>
+                           <%= render 'form' %>
+
+                        </article>
+                    </div>
+                    <!-- /.blog-single-sidebar --> 
+                </div>
+                <!--/#sidebar--> 
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    <!-- </div> -->
+    <!-- /.page-content role=main --> 
+    <!--=========== END CONTENT FOR THE PAGE ============================================================ --> 
+</div>
+<!-- ================== END #page ================= -->  
