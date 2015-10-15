@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :pletools
   resources :posts
+  get 'tags/:tag', to: 'posts#index', as: :tag
+  get '*path' => redirect('/')
 end
