@@ -14,9 +14,12 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+//= require masonry/jquery.masonry
 //= require bootstrap
 //= require jquery.magnific-popup
 //= require jquery-1.11.1
+//= require jquery.slick-slider
+//= require jquery.main
 //= require bootstrapoverrides
 //= require jquery.bootstrap.addon
 //this needs to go at end

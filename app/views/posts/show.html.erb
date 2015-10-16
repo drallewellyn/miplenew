@@ -6,9 +6,9 @@
         <div class="container">
             <h2>My Blog</h2>
             <ol class="breadcrumb page-header-breadcrumb hidden-xs">
-                <li><a href="index.html" class="link-underline">Home</a></li>
-                <li> <a class="link-underline" href="blog-summary-masonry-layout.html"> Blog</a> </li>
-                <li class="active">Blog Single</li>
+                <li><%= link_to "Home", root_path, class: "link-underline" %></li>
+                <li><%= link_to "Blog", posts_path, class: "link-underline" %> </li>
+                <li class="active"><%= @post.title %></li>
             </ol>
         </div>
         <!-- /.container (for page-header-primary) --> 
@@ -37,8 +37,8 @@
                         </article>
                         <!-- _____________ END 'entry-post'_________ --> 
                     </div>
-                    
-                        </div>
+                    <section>
+                        <%= render 'posts/disqus' %>
                         <!-- End Comment Form --> 
                     </section>
                     <!--close comment section--> 
