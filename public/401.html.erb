@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>miPLE - mi Personal Learning Environment Project</title>
+    <meta name="description" content="Home : Be Different Bootstrap Theme - a different, unique theme with 10 different color combos. Built with Bootstrap, custom css3, html5, and plenty of excellent components, sliders, and other useful elements">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    
+</head>
+<body>
+
+<!-- +++++ No Script Fallback notice +++++ -->
+<noscript>
+<div>Turn on your JavaScript!</div>
+</noscript>
+<!-- accessibility skip to nav skip content -->
+<ul class="sr-only" id="top">
+    <li><a href="#nav" title="Skip to navigation" accesskey="n">Skip to Navigation</a></li>
+    <li><a href="#page" title="Skip to content" accesskey="c">Skip to Content</a></li>
+</ul>
+<!--  /.sr-only accessibility--> 
+<%= render 'layouts/header' %>
+<%= render 'layouts/slideoutpanels' %>
+<!-- =============== BEGIN #page ==============================-->
+<div id="page"> 
+    <!-- =========== PAGE HEADER ON ALL BUT INDEX PAGES =========================================================================== --> 
+    <!-- _________ Page Header ___________ -->
+    <div class="page-header-primary">
+        <div class="container">
+            <h2>404 Error</h2>
+            <ol class="breadcrumb page-header-breadcrumb hidden-xs">
+                <li><a href="index.html" class="link-underline">Home</a></li>
+                <li class="active">404 Error</li>
+            </ol>
+        </div>
+        <!-- /.container (for page-header-primary) --> 
+    </div>
+    <!-- /.page-header-primary --> 
+    <!-- =========== BEGIN CONTENT FOR THE PAGE =========================================================================== -->
+    <div class="page-content" role="main">
+        <div class="container">
+            <div class="well">
+                <h2 class="h1">The page you requested could not be located. Use your browser's <strong>Back</strong> button to navigate to the previous page or ...</h2>
+                <ul class="h3 no-margin-bottom list-inline link-color-inherit">
+                    <li> <a href="index.html" title="go home"> <i class="ti ti-home"> 
+                        <!--themify icon font--> 
+                        </i> </a> </li>
+                    <li>- or -</li>
+                    <li> <a href="#" data-target="#search-panel" data-slide="slide" title="search site"> <i class="ti ti-search"> 
+                        <!--themify icon font--> 
+                        </i> </a> </li>
+                </ul>
+                <!--/ h3 no-margin-bottom list-inline link-color-inherit --> 
+                
+            </div>
+            <!--/ well --> 
+            
+        </div>
+        <!--/ container --> </div>
+    <!-- /.page-content role=main --> 
+    <!--=========== END CONTENT FOR THE PAGE ============================================================ --> 
+</div>
+<!-- ================== END #page ================= --> 
+<%= render 'layouts/footer' %>
+</body>
+</html>

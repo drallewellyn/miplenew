@@ -1,0 +1,8 @@
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <p class="text-center clear">
+    <div class="link-underline signin-toggle">
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    </div>
+  </p>
+<% end -%>
+
