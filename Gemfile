@@ -18,6 +18,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'pygments.rb', '~> 0.6.0'
 gem 'redcarpet', '~> 3.2.2'
 gem 'friendly_id', '~> 5.1.0'
+gem 'masonry-rails'
 gem "paperclip", "~> 4.3"
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'

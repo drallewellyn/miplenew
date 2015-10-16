@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: <i class="fa fa-hand-o-left"></i>
+    next_label: <i class="fa fa-hand-o-right"></i>
+
+    page_entries_info:
+      single_page:
+        zero:  "No %{model} found"
+        one:   "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}s"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b>"
+
+      multi_page: "Displaying %{model}s %{from} - %{to} of %{count}"
+      multi_page_html: "Displaying %{model}s <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count} %{model}s</b>"
