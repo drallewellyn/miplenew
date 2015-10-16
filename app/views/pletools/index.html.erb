@@ -30,7 +30,7 @@
                         <% tag_cloud(@tags, %w(tagsort tagsort tagsort)) do |tag, css_class| %>
                     </span>
                         <li class = "jslink">
-                            <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+                            <%= link_to tag.name, pletag_path(tag.name), :class => css_class %>
                         </li>
                     <% end %>
                 </ul>
