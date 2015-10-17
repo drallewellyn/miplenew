@@ -59,7 +59,7 @@
                         <% end %>
                         <div class="msnry-blog-entry-text">
                             <h4 class"h5"><a href="#"><%= link_to post.title, post %></a></h4>
-                            <p><%= truncate(post.body, :length => 150) %></p>
+                            <p><%= markdown truncate(post.body, :length => 150) %></p>
                             <ul class="msnry-blog-entry-meta list-inline">
                                 <li>
                                     <span class="ti ti-pencil-alt">

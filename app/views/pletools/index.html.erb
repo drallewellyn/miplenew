@@ -60,7 +60,7 @@
                         <div class="msnry-blog-entry-text">
                             <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
                             <h4 class"h5"><a href="#"><%= link_to pletool.link, pletool %></a></h4>
-                            <p><%= truncate(pletool.description, :length => 150) %></p>
+                            <p><%= markdown truncate(pletool.description, :length => 150) %></p>
                             <ul class="msnry-blog-entry-meta list-inline">
                                 <li>
                                     <span class="ti ti-pencil-alt">
