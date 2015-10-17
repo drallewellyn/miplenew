@@ -2032,7 +2032,7 @@ WebFontConfig = {
     var wf = document.createElement('script');
     //wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
     //'://ajax.googleapis.com/ajax/libs/webfont/1.4.2/webfont.js';
-    wf.src = 'vendor/assets/javacsripts/js/webfont.js'; //local is faster this is not a cloud service or if it is, it's fucking slow
+    wf.src = '/webfont.js'; //local is faster this is not a cloud service or if it is, it's fucking slow
     wf.type = 'text/javascript';
     wf.async = 'true';
     var s = document.getElementsByTagName('script')[0];
