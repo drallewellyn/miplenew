@@ -1,4 +1,5 @@
 class Pletool < ActiveRecord::Base
+  attr_accessor :image_file_name
   acts_as_taggable
   acts_as_taggable_on :tags
   has_attached_file :image, :styles => { :large=> "900x900>", :medium => "300x300>", :thumb => "100x100>" }
