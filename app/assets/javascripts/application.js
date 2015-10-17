@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require masonry/jquery.masonry
+//= require jquery.isotope.masonry
 //= require bootstrap
 //= require jquery.magnific-popup
 //= require jquery-1.11.1
@@ -26,8 +27,3 @@
 //= require turbolinks 
 //= require_tree .
 
-
-
-$(document).ready(function() {
-  $('.has-tooltip').tooltip();
-});
