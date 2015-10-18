@@ -1,11 +1,11 @@
 <header class="entry-header">
     <div class "entry-title">
         <div class="btn btn-info btn-lg">
-            <%= if pletool.link exists %>
+            <% if @pletool.link =='' %>
                 <%= link_to @pletool.title, url_for(@pletool.link) %>
-            <%= else %>
+            <% else %>
                 <%= link_to @pletool.title %>
-            <%= end %>
+            <% end %>
         </div>
     </div>    
         <br>

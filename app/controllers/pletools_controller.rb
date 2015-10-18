@@ -6,9 +6,9 @@ class PletoolsController < ApplicationController
 
   def index
     if params[:tag].present? 
-      @pletool = Pletool.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 4)
+      @pletool = Pletool.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
     else
-      @pletools = Pletool.all.order('created_at DESC').paginate(page: params[:page], per_page: 4)
+      @pletools = Pletool.all.order('created_at DESC').paginate(page: params[:page], per_page: 20)
     end
   end
 
