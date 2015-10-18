@@ -1,9 +1,11 @@
 <header class="entry-header">
     <div class "entry-title">
-        <%= @pletool.title %>
-        <br>
-        <div class="btn btn-info">
-            <%= Rinku.auto_link(@pletool.link).html_safe %>
+        <div class="btn btn-info btn-lg">
+            <%= if pletool.link exists %>
+                <%= link_to @pletool.title, url_for(@pletool.link) %>
+            <%= else %>
+                <%= link_to @pletool.title %>
+            <%= end %>
         </div>
     </div>    
         <br>

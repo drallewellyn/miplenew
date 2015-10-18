@@ -5,10 +5,10 @@
     <!-- _________ Page Header ___________ -->
     <div class="page-header-primary">
         <div class="container">
-            <h2>PLE Tool Portfolio</h2>
+            <h2>my PLE Tool Portfolio</h2>
             <ol class="breadcrumb page-header-breadcrumb hidden-xs">
-                <li><a href="index.html" class="link-underline">Home</a></li>
-                <li class="active">Blog Summary</li>
+                <li><%= link_to 'Home', root_path %></li>
+                <li class="active">my PLE Tool Portfolio</li>
             </ol>
         </div>
         <!-- /.container (for page-header-primary) --> 
@@ -59,7 +59,6 @@
                         <% end %>
                         <div class="msnry-blog-entry-text">
                             <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
-                            <h4 class"h5"><a href="#"><%= link_to pletool.link, pletool %></a></h4>
                             <p><%= markdown truncate(pletool.description, :length => 150) %></p>
                             <ul class="msnry-blog-entry-meta list-inline">
                                 <li>
