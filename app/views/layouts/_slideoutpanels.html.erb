@@ -13,13 +13,8 @@
                     <nav id="nav" role="navigation">
                         <ul>
                             <li><%= link_to 'Home', root_path, :class => 'active' %></li>
-                            
-                            <li> <%= link_to 'My Blog', posts_path %>
-                            </li>
-                                
-                            <li> <%= link_to 'PLE Portfolio', pletools_path %>
-                            </li>
-                                
+                            <li> <%= link_to 'My Blog', posts_path %></li> 
+                            <li> <%= link_to 'PLE Portfolio', pletools_path %></li>
                         </ul>
                     </nav>
                 </div>
@@ -123,17 +118,9 @@
                     <h4 class="no-margin-top">Register for Updates - Coming Soon</h4>
                     <!-- <form role="form" action="your-script.php"> -->
                         <div class="form-group">
-                            <input type="firstname" class="form-control form-control-lg" placeholder="Enter first name">
+                            <%= render 'contacts/new' %>             
                         </div>
-                        <div class="form-group">
-                            <input type="lastname" class="form-control form-control-lg" placeholder="Enter last name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control form-control-lg" placeholder="Enter email">
-                        </div>
-                        <p class="text-center">
-                            <button class="btn btn-slide-panel btn-lg btn-block" type="submit"><i class="ti ti-lock"></i> Register</button>
-                        </p>
+
                     <!-- </form> -->
                 <!--     <p class="text-center clear">Already have an account? <a class="link-underline login-toggle" href="#" data-slide="slide" data-target="#login-panel">Login</a></p>
                 </div> -->
@@ -145,25 +132,9 @@
     </div>
     <!--/.slide-panel #signup-panel --> 
     <!-- _________ FORGOT PASSWORD #forgot-password-panel ___________ -->
-    <!-- <div class="slide-panel" id="forgot-password-panel"> <a href="#" class="close ti ti-close">  -->
-        <!--themify icon font--> 
-         <!-- </a>
-        <div class="container">
-            <h3 class="slide-panel-title">Forgot Password</h3>
-            <form role="form" action="your-script.php">
-                <div class="input-group input-group-lg input-group-slide-panel">
-                    <input class="form-control" placeholder="Your@EmailAddress.com" type="email">
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-slide-panel btn-lg">Reset Password</button>
-                    </span> -->
-                    <!--/.input-group-btn 
-                </div>
-            </form>
-            <hr class="vertical-spacer height-20px">
-            <p class="text-center"><a href="#" data-slide="slide" data-target="#login-panel" class="link-underline login-toggle">Remembered your Password?</a></p>
-        </div> -->
-        <!-- /.container --> 
-   <!--  </div> -->
+    <div class="slide-panel" id="forgot-password-panel"> <a href="#" class="close ti ti-close">
+        <%= render 'devise/passwords/new' %>
+    </div>
     <!--/.slide-panel #forgot-password-panel --> 
 </div>
 <!-- END .slide-down-parent --> 

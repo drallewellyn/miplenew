@@ -22,6 +22,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 gem 'rinku', '~> 1.7.3' # for html autolinks
 gem 'aws-sdk', '< 2.0'
+gem 'mail_form', '~> 1.5.1'
 
 group :production do
      gem 'pg'
