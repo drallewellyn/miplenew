@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :contacts, only: [:new, :create]
   get 'tags/:tag', to: 'posts#index', as: :tag, layout: 'application'
-  get 'tags/:tag', to: 'pletools#index', as: :pletag, layout: 'application'
+  get 'pletags/:pletag', to: 'pletools#index', as: :pletag, layout: 'application'
 end

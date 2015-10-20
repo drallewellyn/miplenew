@@ -72,10 +72,10 @@
                                     <%= pletool.created_at.strftime('%A, %B %d') %>
                                 </li>
                                  <li class="entry-tags hidden-xs">
-                                    <% pletool.tags.any? %>
-                                        <% pletool.tags.each do |tag| %>
+                                    <% pletool.pletags.any? %>
+                                        <% pletool.pletags.each do |tag| %>
                                             <li><a href="#"> 
-                                                <%= link_to tag.name, tag_path(tag.name) %>
+                                                <%= link_to tag.name, pletag_path(tag.name) %>
                                             </a></li>  
                                     <% end %>
                                 </li>

@@ -20,8 +20,8 @@
             <%= time_ago_in_words(@pletool.created_at) %> ago</li>
     </ul>
     <ul class="entry-tags hidden-xs">
-        <% @pletool.tags.any? %>
-            <% @pletool.tags.each do |tag| %>
+        <% @pletool.pletags.any? %>
+            <% @pletool.pletags.each do |tag| %>
                 <li><a href="#"> 
                     <%= link_to tag.name, pletag_path(tag.name) %>
                 </a></li>  

@@ -17,6 +17,7 @@
         <%= f.text_field :nickname, hint: 'leave this field blank' %>
     </div>
     <br />
-    <%= f.submit 'Send Message', class: "button" %>
-      
+    <%= button_tag(type: 'submit', class: "text-center btn btn-slide-panel btn-lg btn-block") do %>
+        <i class="ti ti-lock"></i> Log In
+    <% end %>      
 <% end %>
