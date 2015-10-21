@@ -2054,7 +2054,7 @@ body.has-tall-logo .page-header-primary {
   border: 1px solid transparent;
 }
 .slick-loading .slick-list {
-  background: #ffffff url("../images/loader.gif") center center no-repeat;
+  background: #ffffff center center no-repeat;
 }
 .slick-prev:hover,
 .slick-next:hover {
@@ -3610,7 +3610,7 @@ ul.slick-dots > li.slick-active > button:after {
   -webkit-transform: translateY(-50%);
 }
 .video-holder {
-  background: transparent url(../images/loader.gif) center center no-repeat;
+  background: transparent center center no-repeat;
   background-size: 125px 15px;
 }
 .video-holder a:hover .fa,
