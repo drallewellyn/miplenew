@@ -51,7 +51,7 @@
                     <li class="post msnry-blog-entry #">
                         <% if post.image.exists? %>
                             <div class="click-slide click-top"> 
-                                <%= link_to image_tag post.image.url(:medium) %>
+                                <%= link_to image_tag post.image.url(:large) %>
                                 <div class = "text-center">
                                     <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
                                 </div>

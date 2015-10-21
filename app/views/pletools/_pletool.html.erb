@@ -66,7 +66,7 @@
 <!--/ entry-header -->
 <!--/ thumbnail if present -->
 <% if @pletool.image.exists? %>    
-    <%= link_to image_tag @pletool.image.url(:medium), :class => 'img-full-width-tight' %>
+    <%= link_to image_tag(@pletool.image.url(:medium)), url_for(@pletool.link) %>
 <% end %>
 <!--/ end thumbnail if present -->
 <!--/ begin article content -->
