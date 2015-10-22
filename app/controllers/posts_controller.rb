@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def tag_cloud
-    @tags = Post.tag_counts_on(:tags, :limit => 3, :order => "count desc")
+    @tags = Post.tag_counts_on(:tags, :limit => 10, :order => "count desc")
   end
 
   def new

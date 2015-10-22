@@ -13,14 +13,14 @@ class PletoolsController < ApplicationController
   end
 
   def tag_cloud
-    @tags = Pletool.tag_counts_on(:pletags, :limit => 10, :order => "count desc")
-  end
-  
-  def show
+    @pletags = Pletool.tag_counts_on(:pletags, :limit => 10, :order => "count desc")
   end
 
   def new
     @pletool = Pletool.new
+  end
+
+  def show
   end
 
   def edit
@@ -56,7 +56,7 @@ class PletoolsController < ApplicationController
   private
 
     def pletool_params
-      params.require(:pletool).permit(:title, :link, :description, :image_url, :slug, :pletag_list)
+      params.require(:pletool).permit(:title, :link, :description,:image, :image_url, :slug, :pletag, :pletag_list)
     end
 
     def find_pletool

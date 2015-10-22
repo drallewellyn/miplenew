@@ -30,10 +30,10 @@
                     <br>
                    
                     <span class = "jsbutton">
-                        <% tag_cloud(@tags, %w(tagsort tagsort tagsort)) do |tag, css_class| %>
+                        <% tag_cloud(@pletags, %w(pletagsort pletagsort pletagsort)) do |pletag, css_class| %>
                     </span>
                         <li class = "jslink">
-                            <%= link_to tag.name, pletag_path(tag.name), :class => css_class %>
+                            <%= link_to pletag.name, pletag_path(pletag.name), :class => css_class %>
                         </li>
                     <% end %>
                 </ul>
