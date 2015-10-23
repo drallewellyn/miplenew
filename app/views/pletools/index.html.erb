@@ -42,7 +42,8 @@
             
             <!-- _________ MASONRY WITH ISOTOPE ___________ -->
             
-            <ul class="row row-masonry filter-masonry">
+            <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+                <ul class="row row-masonry filter-masonry">
                 <li class="grid-sizer"></li>
                 <!-- required for fluid masonry layout -->
                 <li class="gutter-sizer"></li>
@@ -50,7 +51,7 @@
                 
                 <!-- NEW STUFF -->
                 <% @pletools.each do |pletool| %>
-                    <li class="post msnry-blog-entry #">
+                    <li class="post msnry-port-entry">
                         <% if pletool.image.exists? %>
                             <div class="click-slide click-top"> 
                                 <%= link_to image_tag pletool.image.url(:large) %>
@@ -84,11 +85,10 @@
                             </ul>
                         </div>        
                     </li>
-                <% end %>
-                
+                <% end %>  
                 </li>
-
             </ul>
+            </div>
             <!--/ .row-masonry -->
             
             <div class="text-center">

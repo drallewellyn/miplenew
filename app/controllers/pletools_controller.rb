@@ -5,15 +5,15 @@ class PletoolsController < ApplicationController
   before_action :tag_cloud
 
   def index
-    if params[:tag].present? 
-      @pletool = Pletool.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 20)
+    if params[:pletag].present? 
+      @pletools = Pletool.tagged_with(params[:pletag]).paginate(:page => params[:page], :per_page => 20)
     else
       @pletools = Pletool.all.order('created_at DESC').paginate(page: params[:page], per_page: 20)
     end
   end
 
   def tag_cloud
-    @pletags = Pletool.tag_counts_on(:pletags, :limit => 10, :order => "count desc")
+    @pletags = Pletool.tag_counts_on(:pletags, :limit => 20, :order => "count desc")
   end
 
   def new
@@ -56,7 +56,7 @@ class PletoolsController < ApplicationController
   private
 
     def pletool_params
-      params.require(:pletool).permit(:title, :link, :description,:image, :image_url, :slug, :pletag, :pletag_list)
+      params.require(:pletool).permit(:title, :link, :description,:image, :image_url, :slug, :pletag_list)
     end
 
     def find_pletool

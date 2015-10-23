@@ -4,5 +4,5 @@
 jQuery ->
   $(document).ready ->
   $('jsbutton').click ->
-    $grid.isotope filter: 'jstag'
+    $grid.isotope filter: 'jslink'
   return
