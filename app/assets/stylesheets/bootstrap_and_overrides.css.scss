@@ -2,15 +2,18 @@
 
 // CSS
 /*
-  *= require bootstrap
+*= require bootstrap
  *= require b-different-retro.unpacked
  *= require theme-assets.min
  *= require b-different-retro.min
  *= require logo-font
  *= require theme-assets.unpacked
  *= require jquery-ui
- *= require masonry/centered
- *= require masonry/fluid
+ *= require 'masonry/transitions'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require posts
+ *= require tags
 */ 
 
 

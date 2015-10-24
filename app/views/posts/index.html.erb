@@ -51,7 +51,7 @@
                     <li class="post msnry-blog-entry #">
                         <% if post.image.exists? %>
                             <div class="click-slide click-top"> 
-                                <%= link_to image_tag post.image.url(:large), :align => 'middle' %>
+                                <%= link_to image_tag post.image.url(:medium), :align => 'center' %>
                                 <div class = "text-center">
                                     <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
                                 </div>
@@ -83,9 +83,6 @@
                         </div>        
                     </li>
                 <% end %>
-                
-                </li>
-
             </ul>
             <!--/ .row-masonry -->
             

@@ -1,5 +1,4 @@
 class PletoolsController < ApplicationController
-  layout 'application'
   before_action :find_pletool, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :tag_cloud
