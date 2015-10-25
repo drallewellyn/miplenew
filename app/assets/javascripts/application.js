@@ -16,7 +16,8 @@
 //= require jquery-ui
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
-//= require jquery.isotope.masonry
+//= require masonry/modernizr-transitions
+//= require isotope/jquery.isotope
 //= require jquery.magnific-popup
 //= require jquery-1.11.1
 //= require jquery.slick-slider
@@ -27,5 +28,13 @@
 
 $(document).ready(function() {
   $('.has-tooltip').tooltip();
+});
+
+$('#masonry-container').grid.masonry({
+  itemSelector: '.box',
+  // set columnWidth a fraction of the container width
+  columnWidth: function( containerWidth ) {
+    return containerWidth / 5;
+  }
 });
 

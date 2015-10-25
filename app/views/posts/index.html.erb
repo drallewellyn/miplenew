@@ -39,15 +39,12 @@
             <div class="filter-clone"><!-- this is where the clone of the filter goes--></div>
             
             <!-- _________ MASONRY WITH ISOTOPE ___________ -->
-            
-            <ul class="row row-masonry filter-masonry">
-                <li class="grid-sizer"></li>
-                <!-- required for fluid masonry layout -->
-                <li class="gutter-sizer"></li>
-                <!-- required for fluid masonry layout --> 
-                
+            <div class="text-center">
+            <ul id="masonry-container" class="transitions-enabled centered clearfix masonry">
+
                 <!-- NEW STUFF -->
                 <% @posts.each do |post| %>
+                    <div class="box col3">
                     <li class="post msnry-blog-entry">
                         <% if post.image.exists? %>
                             <div class="click-slide click-top"> 
@@ -80,11 +77,14 @@
                                     <% end %>
                                 </li>
                             </ul>
-                        </div>        
+                        </div>  
+                            
                     </li>
+                    </div>
                 <% end %>
-                </li>
             </ul>
+            </div>
+
             <!--/ .row-masonry -->
             
             <div class="text-center">

@@ -42,53 +42,48 @@
         <div class="filter-clone"><!-- this is where the clone of the filter goes--></div>
         
         <!-- _________ MASONRY WITH ISOTOPE ___________ -->
-        
-        <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-            <ul class="row row-masonry filter-masonry">
-            <li class="grid-sizer"></li>
-            <!-- required for fluid masonry layout -->
-            <li class="gutter-sizer"></li>
-            <!-- required for fluid masonry layout --> 
-            
+        <div class="text-center">
+            <ul id="masonry-container" class="clearfix transitions-enabled masonry"> 
             <!-- NEW STUFF -->
             <% @pletools.each do |pletool| %>
-                <li class="post msnry-port-entry">
-                    <% if pletool.image.exists? %>
-                        <div class="click-slide click-top"> 
-                            <%= link_to image_tag pletool.image.url(:large) %>
-                            <div class = "text-center">
-                                <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, pletool %>
+                <div class="box col3">
+                    <li class="post msnry-blog-entry">
+                        <% if pletool.image.exists? %>
+                            <div class="click-slide click-top"> 
+                                <%= link_to image_tag pletool.image.url(:large) %>
+                                <div class = "text-center">
+                                    <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, pletool %>
+                                </div>
                             </div>
-                        </div>
-                    <% end %>
-                    <div class="msnry-blog-entry-text">
-                        <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
-                        <p><%= markdown truncate(pletool.description, :length => 150) %></p>
-                        <ul class="msnry-blog-entry-meta list-inline">
-                            <li>
-                                <span class="ti ti-pencil-alt">
-                                </span>
-                                by Anthony Llewellyn
-                            </li>
+                        <% end %>
+                        <div class="msnry-blog-entry-text">
+                            <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
+                            <p><%= markdown truncate(pletool.description, :length => 150) %></p>
+                            <ul class="msnry-blog-entry-meta list-inline">
                                 <li>
-                                <span class="ti ti-calendar">
-                                </span>
-                                <%= pletool.created_at.strftime('%A, %B %d') %>
-                            </li>
-                             <li class="entry-tags hidden-xs">
-                                <% pletool.pletags.any? %>
-                                    <% pletool.pletags.each do |tag| %>
-                                        <li><a href="#"> 
-                                            <%= link_to tag.name, pletag_path(tag.name) %>
-                                        </a></li>  
-                                <% end %>
-                            </li>
-                        </ul>
-                    </div>        
-                </li>
+                                    <span class="ti ti-pencil-alt">
+                                    </span>
+                                    by Anthony Llewellyn
+                                </li>
+                                    <li>
+                                    <span class="ti ti-calendar">
+                                    </span>
+                                    <%= pletool.created_at.strftime('%A, %B %d') %>
+                                </li>
+                                 <li class="entry-tags hidden-xs">
+                                    <% pletool.pletags.any? %>
+                                        <% pletool.pletags.each do |tag| %>
+                                            <li><a href="#"> 
+                                                <%= link_to tag.name, pletag_path(tag.name) %>
+                                            </a></li>  
+                                    <% end %>
+                                </li>
+                            </ul>
+                        </div>        
+                    </li>
+                </div>
             <% end %>  
-            </li>
-        </ul>
+            </ul>
         </div>
         <!--/ .row-masonry -->
         
