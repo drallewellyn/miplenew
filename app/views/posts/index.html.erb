@@ -48,7 +48,7 @@
                 
                 <!-- NEW STUFF -->
                 <% @posts.each do |post| %>
-                    <li class="post msnry-blog-entry #">
+                    <li class="post msnry-blog-entry">
                         <% if post.image.exists? %>
                             <div class="click-slide click-top"> 
                                 <%= link_to image_tag post.image.url(:medium), :align => 'center' %>
@@ -83,6 +83,7 @@
                         </div>        
                     </li>
                 <% end %>
+                </li>
             </ul>
             <!--/ .row-masonry -->
             
