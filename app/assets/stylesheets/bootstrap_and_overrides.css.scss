@@ -44,6 +44,12 @@
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
+  list-style-type: none;
+}
+
+#masonry-container ul
+{
+    list-style-type: none;
 }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
