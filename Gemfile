@@ -20,6 +20,7 @@ gem 'will_paginate-bootstrap','~>1.0.1'
 gem 'devise', '~> 3.5.2'
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'byebug'
