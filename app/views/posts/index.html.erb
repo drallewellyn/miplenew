@@ -40,7 +40,7 @@
             
             <!-- _________ MASONRY WITH ISOTOPE ___________ -->
             <div class="text-center">
-                <ul id="masonry-container" class="transitions-enabled centered clearfix masonry">
+                <ul id="masonry-container" class="transitions-enabled centered clearfix masonry-brick">
                 <!-- NEW STUFF thanks to http://www.bootply.com/1Tq35rlkbx Katie Jones for assist in formating-->
                     <div class="masonry-row">
                         <% @posts.each do |post| %>
@@ -48,7 +48,7 @@
                                 <div class="masonry-well">
                                     <% if post.image.exists? %>
                                         <div class="click-slide click-top"> 
-                                            <%= link_to image_tag post.image.url(:medium), :align => 'center' %>
+                                            <%= link_to image_tag post.image.url(:medium), :align => 'center', :id => 'scaled' %>
                                             <div class = "text-center">
                                                 <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
                                             </div>
