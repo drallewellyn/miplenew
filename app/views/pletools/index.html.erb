@@ -43,46 +43,48 @@
         
         <!-- _________ MASONRY WITH ISOTOPE ___________ -->
         <div class="text-center">
-            <ul id="masonry-container" class="clearfix transitions-enabled masonry"> 
-            <!-- NEW STUFF -->
-            <% @pletools.each do |pletool| %>
-                <div class="box col3">
-                    <li class="post msnry-blog-entry">
-                        <% if pletool.image.exists? %>
-                            <div class="click-slide click-top"> 
-                                <%= link_to image_tag pletool.image.url(:large) %>
-                                <div class = "text-center">
-                                    <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, pletool %>
-                                </div>
-                            </div>
-                        <% end %>
-                        <div class="msnry-blog-entry-text">
-                            <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
-                            <p><%= markdown truncate(pletool.description, :length => 150) %></p>
-                            <ul class="msnry-blog-entry-meta list-inline">
-                                <li>
-                                    <span class="ti ti-pencil-alt">
-                                    </span>
-                                    by Anthony Llewellyn
-                                </li>
-                                    <li>
-                                    <span class="ti ti-calendar">
-                                    </span>
-                                    <%= pletool.created_at.strftime('%A, %B %d') %>
-                                </li>
-                                 <li class="entry-tags hidden-xs">
-                                    <% pletool.pletags.any? %>
-                                        <% pletool.pletags.each do |tag| %>
-                                            <li><a href="#"> 
-                                                <%= link_to tag.name, pletag_path(tag.name) %>
-                                            </a></li>  
-                                    <% end %>
-                                </li>
-                            </ul>
-                        </div>        
-                    </li>
+            <ul id="masonry-container" class="clearfix transitions-enabled masonry">           
+            <!-- NEW STUFF thanks to http://www.bootply.com/1Tq35rlkbx Katie Jones for assist in formating-->
+                <div class="masonry-row">
+                    <% @pletools.each do |pletool| %>
+                        <li class="masonry-item">
+                            <div class="masonry-well">
+                                <% if pletool.image.exists? %>
+                                    <div class="click-slide click-top"> 
+                                        <%= link_to image_tag pletool.image.url(:medium) %>
+                                        <div class = "text-center">
+                                            <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, pletool %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                                <div class="msnry-blog-entry-text">
+                                    <h4 class"h5"><a href="#"><%= link_to pletool.title, pletool %></a></h4>
+                                    <p><%= markdown truncate(pletool.description, :length => 150) %></p>
+                                    <ul class="msnry-blog-entry-meta list-inline">
+                                        <li>
+                                            <span class="ti ti-pencil-alt">
+                                            </span>
+                                            by Anthony Llewellyn
+                                        </li>
+                                            <li>
+                                            <span class="ti ti-calendar">
+                                            </span>
+                                            <%= pletool.created_at.strftime('%A, %B %d') %>
+                                        </li>
+                                         <li class="entry-tags hidden-xs">
+                                            <% pletool.pletags.any? %>
+                                                <% pletool.pletags.each do |tag| %>
+                                                    <li><a href="#"> 
+                                                        <%= link_to tag.name, pletag_path(tag.name) %>
+                                                    </a></li>  
+                                            <% end %>
+                                        </li>
+                                    </ul>
+                                </div>  
+                            </div> 
+                        </li>         
+                    <% end %>
                 </div>
-            <% end %>  
             </ul>
         </div>
         <!--/ .row-masonry -->

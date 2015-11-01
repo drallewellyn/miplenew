@@ -30,12 +30,16 @@
 // Glyphicons
 
 
-
+// Make header transparent - my own personal stylings
 
 .header {
     background-color: rgba(171, 227, 237, 0.9);}
 .header-btn {
     background: rgba(171, 227, 237, 0.5);}
+
+// end header transparency
+
+// Masonry Formatting thanks to http://www.bootply.com/1Tq35rlkbx http://www.bootply.com/users/katie Katie Jones
 
 #masonry-container {
   padding: 5px;
@@ -67,7 +71,6 @@
 .col3 img { max-width: 240px; }
 .col4 img { max-width: 380px; }
 .col5 img { max-width: 480px; }
-
 
 .transitions-enabled.masonry,
 .transitions-enabled.masonry .masonry-brick {
@@ -103,3 +106,34 @@
        -o-transition-property: none;
           transition-property: none;
 }
+
+// http://www.bootply.com/users/katie bits
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.masonry-row {
+ -moz-column-width: 14em;
+ -webkit-column-width: 12em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em; 
+  
+}
+
+.masonry-item {
+  margin-top: 1em;
+  display: inline-block;
+  padding:  .25rem;
+  width:  100%; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 1px #aaa;
+  box-shadow: 0px 0px 5px 1px #aaa;
+}
+
+.masonry-well {
+ position:relative;
+ display: block;
+}
+
+// end Katie Jones bits
+// end masonry stuff

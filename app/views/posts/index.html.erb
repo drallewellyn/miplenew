@@ -40,51 +40,50 @@
             
             <!-- _________ MASONRY WITH ISOTOPE ___________ -->
             <div class="text-center">
-            <ul id="masonry-container" class="transitions-enabled centered clearfix masonry">
-
-                <!-- NEW STUFF -->
-                <% @posts.each do |post| %>
-                    <div class="box col3" list-style-type="none">
-                    <li class="post msnry-blog-entry">
-                        <% if post.image.exists? %>
-                            <div class="click-slide click-top"> 
-                                <%= link_to image_tag post.image.url(:medium), :align => 'center' %>
-                                <div class = "text-center">
-                                    <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
-                                </div>
-                            </div>
-                        <% end %>
-                        <div class="msnry-blog-entry-text">
-                            <h4 class"h5"><a href="#"><%= link_to post.title, post %></a></h4>
-                            <p><%= markdown truncate(post.body, :length => 150) %></p>
-                            <ul class="msnry-blog-entry-meta list-inline">
-                                <li>
-                                    <span class="ti ti-pencil-alt">
-                                    </span>
-                                    by Anthony Llewellyn
-                                </li>
-                                    <li>
-                                    <span class="ti ti-calendar">
-                                    </span>
-                                    <%= post.created_at.strftime('%A, %B %d') %>
-                                </li>
-                                 <li class="entry-tags hidden-xs">
-                                    <% post.tags.any? %>
-                                        <% post.tags.each do |tag| %>
-                                            <li><a href="#"> 
-                                                <%= link_to tag.name, tag_path(tag.name) %>
-                                            </a></li>  
+                <ul id="masonry-container" class="transitions-enabled centered clearfix masonry">
+                <!-- NEW STUFF thanks to http://www.bootply.com/1Tq35rlkbx Katie Jones for assist in formating-->
+                    <div class="masonry-row">
+                        <% @posts.each do |post| %>
+                            <li class="masonry-item">
+                                <div class="masonry-well">
+                                    <% if post.image.exists? %>
+                                        <div class="click-slide click-top"> 
+                                            <%= link_to image_tag post.image.url(:medium), :align => 'center' %>
+                                            <div class = "text-center">
+                                                <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
+                                            </div>
+                                        </div>
                                     <% end %>
-                                </li>
-                            </ul>
-                        </div>  
-                            
-                    </li>
+                                    <div class="msnry-blog-entry-text">
+                                        <h4 class"h5"><a href="#"><%= link_to post.title, post %></a></h4>
+                                        <p><%= markdown truncate(post.body, :length => 150) %></p>
+                                        <ul class="msnry-blog-entry-meta list-inline">
+                                            <li>
+                                                <span class="ti ti-pencil-alt">
+                                                </span>
+                                                by Anthony Llewellyn
+                                            </li>
+                                                <li>
+                                                <span class="ti ti-calendar">
+                                                </span>
+                                                <%= post.created_at.strftime('%A, %B %d') %>
+                                            </li>
+                                             <li class="entry-tags hidden-xs">
+                                                <% post.tags.any? %>
+                                                    <% post.tags.each do |tag| %>
+                                                        <li><a href="#"> 
+                                                            <%= link_to tag.name, tag_path(tag.name) %>
+                                                        </a></li>  
+                                                <% end %>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>  
+                            </li>       
+                        <% end %>
                     </div>
-                <% end %>
-            </ul>
+                </ul>
             </div>
-
             <!--/ .row-masonry -->
             
             <div class="text-center">
