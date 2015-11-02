@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+    <%= link_to post do %>
+      <div style="clear: both">
+        <h5 style="float: left"><%= post.title %></h5>
+      </div>
+    <% end %>    
+<% end %> 

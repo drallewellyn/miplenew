@@ -1,9 +1,10 @@
 <% @posts.each do |post| %>
   <li>
     <% if post.image.exists? %>
-      <%= link_to image_tag post.image.url(:medium), :align => 'center', :id => 'scaled' %>
+      <%= link_to post do %>
+        <%= image_tag(post.image.url(:medium), :align => 'center', :id => 'scaled') %>
+      <% end %>
     <% end %>
-
   </li>       
 <% end %> 
 
