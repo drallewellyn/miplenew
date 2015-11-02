@@ -2,7 +2,7 @@
   <li>
     <% if post.image.exists? %>
       <%= link_to post do %>
-        <%= image_tag(post.image.url(:medium), :align => 'center', :id => 'scaled') %>
+        <%= image_tag(post.image.url(:medium), :align => 'center', :id => 'scaled', :'data-hover' => 'tooltip', :'data-placement' => 'right', :title => (post.title)) %>
       <% end %>
     <% end %>
   </li>       
