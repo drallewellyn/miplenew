@@ -30,11 +30,5 @@ $(document).ready(function() {
   $('.has-tooltip').tooltip();
 });
 
-$('#masonry-container').grid.masonry({
-  itemSelector: '.box',
-  // set columnWidth a fraction of the container width
-  columnWidth: function( containerWidth ) {
-    return containerWidth / 5;
-  }
-});
+
 
