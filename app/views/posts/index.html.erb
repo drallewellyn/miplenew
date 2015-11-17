@@ -50,9 +50,9 @@
                                 <div class="masonry-well">
                                     <% if post.image.exists? %>
                                         <div class="click-slide click-top"> 
-                                            <%= link_to image_tag post.image.url(:medium), :align => 'center', :id => 'scaled' %>
+                                            <%= image_tag post.image(:medium), :align => 'center', :id => 'scaled' %>
                                             <div class = "text-center">
-                                                <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, post %>
+                                                <%= link_to '<span class = "ti ti-layout-list-post"></span>'.html_safe, post %>
                                             </div>
                                         </div>
                                     <% end %>

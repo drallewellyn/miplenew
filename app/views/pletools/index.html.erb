@@ -51,9 +51,9 @@
                             <div class="masonry-well">
                                 <% if pletool.image.exists? %>
                                     <div class="click-slide click-top"> 
-                                        <%= link_to image_tag pletool.image.url(:medium), :align => 'center', :id => 'scaled' %>
+                                        <%= image_tag pletool.image(:medium), :align => 'center', :id => 'scaled' %>
                                         <div class = "text-center">
-                                            <%= link_to '<span class = "ti ti-eye"></span>'.html_safe, pletool %>
+                                            <%= link_to '<span class = "ti ti-plus"></span>'.html_safe, pletool %>
                                         </div>
                                     </div>
                                 <% end %>
