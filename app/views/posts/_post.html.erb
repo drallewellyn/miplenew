@@ -60,7 +60,7 @@
 <!--/ entry-header -->
 <!--/ thumbnail if present -->
 <% if @post.image.exists? %>    
-    <%= image_tag(@post.image.url(:medium)) %>
+    <%= image_tag(@post.image.url(:large), :class => 'img-responsive') %>
 <% end %>
 <!--/ end thumbnail if present -->
 <!--/ begin article content -->
